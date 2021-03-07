@@ -214,11 +214,11 @@ if __name__ == "__main__":
 		worst_down = worst_down_result["download"]
 		print(create_stat_string("Download", avg_down, best_down, worst_down, unit="Mbps"))
 
-	with(open("results.txt", "w")) as out:
+	with(open(outfile, "w")) as out:
 		final_results = {
 			"stats": stats_by_day,
 			"datapoints": results
 		}
 		out.write(json.dumps(final_results, indent=4))
 
-	print("Data has been logged in /results.txt")
+	print("Data has been logged in " + outfile)
